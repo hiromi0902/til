@@ -1,0 +1,251 @@
+/*　ハンバーガーボタン */
+head{
+  padding: auto;
+}
+
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 32px;
+    top   : 32px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    
+  }
+  .hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #555;
+    -webkit-transition: 0.5s all;
+    -moz-transition   : 0.5s all;
+    transition        : 0.5s all;
+  }
+  .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 30px;
+  }
+  
+  /* ナビ開いてる時のボタン */
+  
+  .hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    width: 24px;
+      background : #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    left: 60%;
+    opacity: 0;
+    -webkit-animation: active-btn17-bar02 .8s forwards;
+    animation: active-hamburger-bar02 .8s forwards;
+  }
+  @-webkit-keyframes active-hamburger-bar02 {
+    100% {
+      height: 0;
+    }
+  }
+  @keyframes active-hamburger-bar02 {
+    100% {
+      height: 0;
+    }
+  }
+  .hamburger.active span:nth-child(3) {
+    top: 16px;
+    width: 24px;
+    background : #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
+  
+  
+  .hamburger::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: '';
+    width: 52px;
+    height: 52px;
+    margin: -32px 0 0 -32px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: all .75s;
+  }
+  .hamburger.active::after {
+    border: 2px solid #fff;
+  }
+  
+  nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  
+  nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+  
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: .4s all;
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+  }
+  nav.globalMenuSp ul li:hover{
+    background :#ddd;
+  }
+  
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+  }
+  
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    opacity: 100;
+  
+  }
+
+  .wrapper{
+    margin: 10px;
+  } 
+
+  .main-image{
+    display: flex;
+
+  }
+
+ /*メディアクエリでレスポンシブ対応*/
+ @media screen and (max-width:499) {
+  .main-image{
+    width: 100%;
+    height: auto;
+    }
+ }
+
+ @media screen and (max-width:500px) and (max-width:999px) {
+  .main-image{
+    width: 100%;
+    height: auto;
+    }
+     
+ }
+
+ @media screen and (min-width:1000px) {
+  .main-image{
+    width: 100%;
+    height: auto;
+    }    
+ }
+
+ .topic-block ul{
+    display: inline;
+    display: flex;
+ }
+
+.topic-block li{
+    border        : solid;
+    border-radius : gray;
+    border-radius : 10px 10px 10px 10px;
+    display       : block;
+    width         : 30%;
+    padding       : 10px 10px;
+    margin: 10 10px 10 10px;
+    
+}
+
+.company-info {
+    list-style : none;
+}
+
+.footer-box{
+    margin     : auto;
+    box-sizing : border-box;           /* 罫線も含む長さ */
+    background : #fff;               /* BOXの背景色   */
+    /* border     : 1px solid #666;     枠線の指定    */
+    width      : 50%;                /* BOXの幅       */
+    height      : auto;                /* BOXの高さ     */
+    animation  : boxAnime 10s linear infinite alternate;
+    /* ▼ FlexBoxの定義 */
+    display    : flex;                 /* FlexBox定義  */
+    flex-wrap  : wrap;                 /* 折り返し定義  */
+    justify-content: center;
+
+}
+
+.info{
+    box-sizing : border-box;           /* 罫線も含む長さ  */
+    /* background : #B0C4DE;            /* BOXの背景色    */
+    /* border     : 2px solid #35557f;  枠線の指定     */
+    width      : 60px;                 /* サンプルBOXの幅 */
+    height     : 60px;                 /* サンプルBOXの幅 */
+    margin     : 2px;                  /* サンプルBOXの間 */
+    /* ▼ FlexBoxの各ボックス均等自動幅 */
+    flex-grow  : 1;                    /* 各BOXを均等に割当て */
+}
+
+.inquiry{
+    box-sizing : border-box;           /* 罫線も含む長さ  */
+    /* background : #B0C4DE;            /* BOXの背景色    */
+    /* border     : 2px solid #35557f;  枠線の指定     */
+    width      : 60px;                 /* サンプルBOXの幅 */
+    height     : 60px;                 /* サンプルBOXの幅 */
+    margin     : 2px;                  /* サンプルBOXの間 */
+    /* ▼ FlexBoxの各ボックス均等自動幅 */
+    flex-grow  : 1;                    /* 各BOXを均等に割当て */
+}
+
+.inquiry label{
+  float: left;
+}
+
+.badge{
+  font-size: 70%;
+  width: 4ch;
+  padding: 2px;
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  border-radius: 10%;
+  float: left;
+  margin-left: 10px;
+}
+
+.inquiry input,select,textarea {
+  width: 100%;
+  margin: 5px 0 5 0;
+}
+
+#modalBody {
+    white-space: pre-wrap;
+}
+ 
