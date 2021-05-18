@@ -7,15 +7,44 @@
 </head>
 <body>
   <!-- モーダルの中身 -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h1>hello</h1>
-        <input type="button" id="closeBtn" value="close">
-      </div>
-    </div>
-  </div>
-  <input type="button" id="btn" value='click me'>
-  <script type='text/javascript' src="./modal.js"></script>
+<div class="row">
+	<div class="col-sm-12">
+		<a href="#modal1" class="button">モーダルウィンドウ1</a>
+		<a href="#modal2" class="button">モーダルウィンドウ2</a>
+		<a href="#modal3" class="button">モーダルウィンドウ13</a>
+	</div>
+</div>
+
+<div id="modal1" class="overlays">
+	<a class="cancel" href="#"></a>
+	<div class="modals">
+		<h2>モーダルウィンドウ1</h2>
+		<div class="cont">
+			<p>×マークでも背景クリックでも解除できます。</p>
+			<p class="close"><a href="#">×</a></p>
+		</div>
+	</div>
+</div>
+    
+<div id="modal2" class="overlays">
+	<a class="cancel" href="#"></a>
+	<div class="modals">
+		<h2>モーダルウィンドウ2</h2>
+		<div class="cont">
+		<p>背景クリックで解除ができます。</p>
+		</div>
+	</div>
+</div>
+    
+<div id="modal3" class="overlays">
+	<div class="modals">
+		<h2>モーダルウィンドウ3</h2>
+		<div class="cont">
+			<p>×ボタンのみで解除できます。</p>
+			<p class="close"><a href="#">×</a></p>
+		</div>
+	</div>
+</div>
+    
 </body>
 </html>
